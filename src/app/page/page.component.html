@@ -1,0 +1,59 @@
+<div class="background">
+    <div class="head">
+        <div class="head-left">
+
+        </div>
+        <div class="head-center">
+
+        </div>
+        <div class="head-right">
+
+        </div>
+    </div>
+    <div class="body">
+        <div class="body-left">
+
+        </div>
+        <div class="body-center">
+            <div class="container">
+                <div *ngFor="let item of weather_lists">
+                    <div class="output animate fadeUp">
+                        <h1>City : {{item.name}} ({{item.country}})</h1>
+
+                        <div class="image">
+                            <img src="{{getweatherimg(item.main)}}" alt="">
+                            <div class="temp">
+                                <p>Temperature : {{(item.temp - 273).toFixed(2)}} °C</p>
+                                <p>Degree Feels like : {{(item.feels_like - 273).toFixed(2)}} °C</p>
+                            </div>
+                        </div>
+
+                        <div class="details">
+                            <p>Weather : {{item.main}} ({{item.description}})</p>
+                            <p> {{ getWeatherMessage(item.main)}} </p>
+                        </div>
+
+                        <div class="details">
+                            <p>Wind speed : {{item.speed}}</p>
+                            <p> {{getwindspeed(item.speed)}} </p>
+                        </div>
+
+                        <div class="details">
+                            <p>Wind Gust: {{ item.gust }} m/s</p>
+                            <p>{{ getWindGustDetails(item.gust) }}</p>
+                        </div>
+
+                        <div class="details">
+                            <p>Wind Direction: {{ item.deg }}°</p>
+                            <p>{{ getWindDirectionDetails(item.deg) }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body-right">
+
+        </div>
+    </div>
+
+</div>

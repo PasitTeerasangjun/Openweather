@@ -1,0 +1,55 @@
+<nav class="default">
+    <div class="logo">
+        <h1>Open Weather</h1>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a type="button" (click)="tohome()">Home</a></li>
+            <li><a type="button" (click)="topage()">Page</a></li>
+            <li *ngIf="check_local() == false" ><a href='login'>Login</a></li>
+            <li *ngIf="check_local() == false"><a href='form'>Register</a></li>
+
+            <li *ngIf="check_local() == true"><a href='login'>{{ getemail() }}</a></li>
+            <li *ngIf="check_local() == true" ><a type="button" (click)="logout()">Logout</a></li>
+            <!-- <li><a href=''>About</a></li>
+            <li><a href=''>Contact us</a></li> -->
+        </ul>
+    </div>
+</nav>
+
+<nav class="mobile">
+    <mat-toolbar color="white">
+        <div class="logo">
+            <h1>Open Weather</h1>
+        </div>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>lists</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="tohome()">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+          </button>
+          <button mat-menu-item (click)="topage()">
+            <mat-icon>pages</mat-icon>
+            <span>Page</span>
+          </button>
+          <button mat-menu-item (click)="tologin()" *ngIf="check_local() == false">
+            <mat-icon>login</mat-icon>
+            <span>Login</span>
+            <span *ngIf="check_local() == true">{{ getemail() }}</span>
+          </button>
+          <button mat-menu-item (click)="tologin()" *ngIf="check_local() == true">
+            <span>{{ getemail() }}</span>
+          </button>
+          <button mat-menu-item *ngIf="check_local() == false" (click)="toregister()">
+            <mat-icon>settings</mat-icon>
+            <span>Register</span>
+          </button>
+          <button mat-menu-item (click)="logout()" *ngIf="check_local() == true">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </mat-toolbar>
+</nav>

@@ -1,0 +1,232 @@
+.background {
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+}
+
+
+.head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.head_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2{
+    font-size: 35px;
+    color: black;
+    margin: 10px;
+    filter: drop-shadow(4px 4px 4px white);
+}
+
+.body {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 10px;
+
+}
+
+.body-left {
+    flex: 10%;
+    height: auto;
+
+}
+
+.body-center {
+    flex: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.body-right {
+    flex: 10%;
+    height: auto;
+
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    border-radius: 50px;
+    display: grid;
+    gap: 15px;
+    align-items: center;
+    position: relative;
+    padding: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.output-container{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+}
+
+.output {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 gray;
+
+}
+
+.output h1 {
+    color: black;
+    filter: none;
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 20px;
+    grid-column: 1 / span 2;
+}
+
+.output .temp {
+    color: black;
+    filter: none;
+    font-size: 16px;
+    grid-column: 1 / span 2;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.animate {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+}
+
+@keyframes fadeUp {
+    from{
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to{
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeUp{
+    -webkit-animation-name: fadeUp;
+    animation-name: fadeUp;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+input {
+    width: 40%;
+    height: 30px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    padding: 6px;
+    padding-left: 10px;
+    border: 3px solid black;
+    border-radius: 5px;
+    font-size: 17px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input:focus {
+    width: 70%
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid transparent;
+    transition-duration: 0.4s;
+    align-self: center;
+    justify-self: end;
+    margin-right: 10px;
+}
+
+
+button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+@media (max-width: 900px) {
+    .output-container{
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: none;
+    }
+}
+
+@media (max-width: 600px) {
+    h2{
+        font-size: 30px;
+        text-align-last: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    button{
+        justify-self: start;
+    }
+
+    .output {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .output h1 {
+        font-size: 35px;
+    }
+
+    input{
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+
+    .output h1 {
+        font-size: 30px;
+    }
+
+    h2{
+        font-size: 25px;
+    }
+
+}

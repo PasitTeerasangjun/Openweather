@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0px;
+    font-family: "Poetsen One", sans-serif;
+    /*font-family: "Permanent Marker", cursive;*/
+    background-image: linear-gradient(to right, rgb(134, 255, 253), white);
+}

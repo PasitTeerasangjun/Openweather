@@ -1,0 +1,76 @@
+<app-navbar (update_stats)="get_stats($event)"></app-navbar>
+<div class="background" *ngIf="stats">
+    <div class="head">
+        <div class="head-left">
+
+        </div>
+        <div class="head-center">
+        </div>
+        <div class="head-right">
+
+        </div>
+    </div>
+    <div class="body">
+        <div class="body-left">
+
+        </div>
+        <div class="body-center">
+            <div class="container">
+                <div class="input">
+                    <h2>Enter the name of the city</h2>
+                    <input type="text" name="search" value={{City}} [(ngModel)]="City" (keypress)="check($event)">
+                </div>
+                <div class="output-container">
+                    <div *ngFor="let item of data_weather ; index as i">
+                        <ng-container *ngIf="i < 2">
+                            <div class="output animate fadeUp">
+                                <h1>City : {{item.name}}</h1>
+                                <p class="temp">Degree Celsius : {{(item.temp - 273).toFixed(2)}} °C</p>
+                                <p class="temp_feels">Degree Feels like : {{(item.feels_like - 273).toFixed(2)}} °C</p>
+                                <button (click)="click(item.name)">More Info</button>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="i < 4 && i >= 2">
+                            <div class="output animate fadeUp" style="-webkit-animation-delay: 0.3s; -moz-animation-delay: 1s; animation-delay: 0.3s;">
+                                <h1>City : {{item.name}}</h1>
+                                <p class="temp">Degree Celsius : {{(item.temp - 273).toFixed(2)}} °C</p>
+                                <p class="temp_feels">Degree Feels like : {{(item.feels_like - 273).toFixed(2)}} °C</p>
+                                <button (click)="click(item.name)">More Info</button>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="i < 6 && i >= 4">
+                            <div class="output animate fadeUp" style="-webkit-animation-delay: 0.7s; -moz-animation-delay: 1s; animation-delay: 0.7s;">
+                                <h1>City : {{item.name}}</h1>
+                                <p class="temp">Degree Celsius : {{(item.temp - 273).toFixed(2)}} °C</p>
+                                <p class="temp_feels">Degree Feels like : {{(item.feels_like - 273).toFixed(2)}} °C</p>
+                                <button (click)="click(item.name)">More Info</button>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="i < 8 && i >= 6">
+                            <div class="output animate fadeUp" style="-webkit-animation-delay: 1.1s; -moz-animation-delay: 1s; animation-delay: 1.1s;">
+                                <h1>City : {{item.name}}</h1>
+                                <p class="temp">Degree Celsius : {{(item.temp - 273).toFixed(2)}} °C</p>
+                                <p class="temp_feels">Degree Feels like : {{(item.feels_like - 273).toFixed(2)}} °C</p>
+                                <button (click)="click(item.name)">More Info</button>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="i < 10 && i >= 8">
+                            <div class="output animate fadeUp" style="-webkit-animation-delay: 1.5s; -moz-animation-delay: 1s; animation-delay: 1.5s;">
+                                <h1>City : {{item.name}}</h1>
+                                <p class="temp">Degree Celsius : {{(item.temp - 273).toFixed(2)}} °C</p>
+                                <p class="temp_feels">Degree Feels like : {{(item.feels_like - 273).toFixed(2)}} °C</p>
+                                <button (click)="click(item.name)">More Info</button>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body-right">
+
+        </div>
+    </div>
+</div>
+<div>
+    <app-page [weather_lists]="show_weather" *ngIf="stats == false"></app-page>
+</div>

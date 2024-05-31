@@ -1,0 +1,112 @@
+<app-navbar></app-navbar>
+<div class="background">
+    <div class="body">
+        <div class="body-left">
+            
+        </div>
+        <div class="body-center">
+            <div class='container'>
+                <div class="head-containner">
+                    <div class="left">
+        
+        
+                    </div>
+                    <div class="center">
+                        <h1>Form Register</h1>
+                    </div>
+                    <div class="right">
+        
+        
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="firstname">
+                        <h2>Firstname</h2>
+                        <input type="text" value={{First}} [(ngModel)]="First" (input)="editfirst()" name="" id=""
+                            placeholder="Please Enter firstname ...">
+                        <div>
+                            <p id="first" style="color: red;"></p>
+                        </div>
+                    </div>
+        
+                    <div class="lastname">
+                        <h2>Lastname</h2>
+                        <input type="text" value={{Last}} [(ngModel)]="Last" (input)="editlast()" name="" id=""
+                            placeholder="Please Enter lastname ...">
+                        <div>
+                            <p id="last" style="color: red;"></p>
+                        </div>
+                    </div>
+        
+                    <div class="age">
+                        <h2>Age</h2>
+                        <input type="text" value={{Age}} [(ngModel)]="Age" (keypress)="numberOnly($event)" (input)="editage()"
+                            maxlength="3" name="" id="" placeholder="Please Enter age ...">
+                        <div>
+                            <p id="age" style="color: red;"></p>
+                        </div>
+                    </div>
+        
+                    <div class="gender">
+                        <h2>Gender</h2>
+                        <select value={{Gender}} [(ngModel)]="Gender" (input)="editgender()" class="" id="">
+                            <optgroup label="Gender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="LGBTQ+">LGBTQ+</option>
+                            </optgroup>
+                        </select>
+                        <div>
+                            <p id="gender" style="color: red;"></p>
+                        </div>
+                    </div>
+        
+                    <div class="email">
+                        <h2>Email</h2>
+                        <input class="input-email" [(ngModel)]="Email" (input)="editemail()" type="text"
+                            placeholder="Please Enter email ...">
+                        <div>
+                            <p id="email" style="color: red;"></p>
+                        </div>
+                    </div>
+        
+                    <div class="phone">
+                        <h2>Phone</h2>
+                        <input class="input-phone" [(ngModel)]="Phone" (keypress)="numberOnly($event)" (input)="editphone()"
+                            type="text" maxlength="10" placeholder="Please Enter phone ...">
+                        <div>
+                            <p id="phone" style="color: red;"></p>
+                        </div>
+                    </div>
+        
+                    <div class="password">
+                        <h2>Password</h2>
+                        <input type="password" value={{pass}} [(ngModel)]="pass" (input)="editpass()" name="pass"
+                            placeholder="Please Enter password ...">
+                        <div>
+                            <p id="pass" style="color: red;"></p>
+                        </div>
+                    </div>
+        
+                    <div class="confirmpassword">
+                        <h2>Confirm Password</h2>
+                        <input type="password" value={{confirm}} [(ngModel)]="confirm" (input)="editcomfirm()" name="" id=""
+                            placeholder="Please Enter Comfirm password ...">
+                        <div>
+                            <p id="confirm" style="color: red;"></p>
+                        </div>
+                    </div>
+        
+                    <div class="btn-container">
+                        <button class="btn-sub" type="submit" (click)=check()><span>Register</span></button>
+                        <button class="btn-cancel" type="submit" (click)=cancel()><span>Cancel</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body-right">
+
+        </div>
+    </div>
+
+</div>

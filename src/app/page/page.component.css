@@ -1,0 +1,195 @@
+.background {
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+}
+
+.head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.head_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    
+    font-size: 40px;
+    color: white;
+    margin: 0px;
+    filter: drop-shadow(4px 4px 4px black);
+
+}
+
+h2{
+    
+    font-size: 16px;
+    color: black;
+    margin: 10px;
+    filter: drop-shadow(4px 4px 4px white);
+}
+
+.body {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+}
+
+.body-left {
+    flex: 15%;
+    height: auto;
+
+}
+
+.body-center {
+    flex: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.body-right {
+    flex: 15%;
+    height: auto;
+
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.output {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    align-items: start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 gray;
+
+}
+
+.output h1 {
+    color: black;
+    filter: none;
+    font-size: 40px;
+    
+}
+
+p{
+    color: black;
+    filter: none;
+    font-size: 20px;
+    margin: 0px;
+}
+
+.image{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+.output .temp {
+    grid-column: 1 / span 2;
+
+}
+
+.animate {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+}
+
+@keyframes fadeUp {
+    from{
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to{
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeUp{
+    -webkit-animation-name: fadeUp;
+    animation-name: fadeUp;
+}
+
+.output .details{
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    font-size: 20px;
+}
+
+.temp{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 450px) {
+    .output h1{
+        font-size: 30px;
+    }
+
+    p{
+        font-size: 16px;
+    }
+
+    .image{
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .output .temp{
+        margin: 0px;
+        margin-bottom: 10px;
+
+    }
+
+    .output .details{
+        margin: 0px;
+        margin-bottom: 10px;
+    }
+
+}

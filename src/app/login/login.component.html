@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div class="background">
+    <div class="head-img">
+        <div class="head-left">
+
+        </div>
+        <div class="head-center">
+            <div class="background-img">
+                <div class="img">
+                    <img src="https://miro.medium.com/v2/resize:fit:436/1*8ZrJv059rfdxNnArtVnwtg.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="head-right">
+
+        </div>
+    </div>
+    <div class="body">
+        <div class="body-left">
+
+        </div>
+        <div class="body-center">
+            <div class="container">
+                <div class="h1">
+                    <h1 *ngIf="check_local() == false">Login to Open Weather</h1>
+                    <h1 *ngIf="check_local() == true">Login Another Account</h1>
+                </div>
+                <div class="email">
+                    <h2>Email : </h2>
+                    <input id="input-email" class="input-email" type="text" value={{Email}} [(ngModel)]="Email" (input)="editemail()" name="" id="" placeholder="Please Enter email ...">
+                    <p id="email" style="color: red;"></p>
+                </div>
+                <div class="password">
+                    <h2>Password : </h2>
+                    <input class="input-password" type="password" value={{pass}} [(ngModel)]="pass" (input)="editpass()" name="" id="" placeholder="Please Enter password ...">
+                    <p id="pass" style="color: red;"></p>
+                </div>
+                <div class="btn">
+                    <button class="btn-login" (click)="check()"><span>Login</span></button>
+                    <button class="btn-login" routerLink="/home"><span>Back</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="body-right">
+
+        </div>
+    </div>
+</div>
